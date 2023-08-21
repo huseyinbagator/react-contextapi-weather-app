@@ -1,70 +1,36 @@
 .App {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
 }
 
-.container {
+.homepage {
   width: 50%;
   height: 70vh;
   background-color: #91c8e4;
-  opacity: 0.8;
-}
-
-.city-name-section {
-  text-align: center;
-  margin-top: 1rem;
-}
-
-.search-bar-section {
-  margin-left: 1rem;
 }
 
 .search-bar {
   width: 12rem;
   height: 1.5rem;
-  border-radius: 28px;
-}
-
-.daily-status-section {
-  display: flex;
-  justify-content: center;
-  margin-top: 0.5rem;
 }
 
 .status-container {
-  background-color: whitesmoke;
   width: 95%;
   height: 120px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .status-left {
   width: 60%;
   background-color: #91c8e4;
   height: 100px;
-  margin: 5px;
 }
 
 .status-right {
   width: 40%;
   background-color: #91c8e4;
   height: 100px;
-  margin: 5px;
-}
-
-.weather-week {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
 }
 
 .days {
   width: 95%;
   height: 150px;
-  background-color: whitesmoke;
 }
