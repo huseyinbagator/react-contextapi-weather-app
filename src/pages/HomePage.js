@@ -27,14 +27,14 @@ const HomePage = () => {
         <Col className="d-flex justify-content-center mt-3">
           <Row className="status-container bg-body d-flex justify-content-center align-items-center">
             <Col className="status-left m-1 d-flex align-items-center ">
-              <Col>{data.heat}°C</Col>
-              <Col>
+              <Col className="ms-4 fs-2 text">{data.heat}°C</Col>
+              <Col className="fs-5 ">
                 <div>Yağış:{data.precipitation}</div>
                 <div>Nem:{data.moisture}</div>
                 <div>Rüzgar:{data.wind}</div>    
               </Col>
             </Col>
-            <Col className="status-right m-1 ">
+            <Col className="status-right m-1 fs-5">
               <h3>Hava Durumu</h3>
               <div>{data.day}</div>
               <div>{data.season}</div>
@@ -43,7 +43,11 @@ const HomePage = () => {
         </Col>
         <Col className="d-flex justify-content-center align-items-center mt-2">
           <div className="days bg-body">
-            <div>{data.weekdays}</div>
+            <div className="pt-4  fs-3 d-flex justify-content-center align-items-center ">
+             {data.weekdays.map((day,index) =>(
+              <div className="m-3" key={index}>{day}</div>
+             ))}  
+            </div>
          </div>
         </Col>
       </Container>
