@@ -12,7 +12,7 @@ const HomePage = () => {
     moisture: 20,
     wind: 15,
     day:"Çarşamba",
-    season:"Sunny",
+    weather:"Güneşli",
     weekdays:["Çarşamba","Perşembe","Cuma","Cumartesi","Pazar","Pazartesi","Salı"],
   };
   return (
@@ -37,7 +37,7 @@ const HomePage = () => {
             <Col className="status-right m-1 fs-5">
               <h3>Hava Durumu</h3>
               <div>{data.day}</div>
-              <div>{data.season}</div>
+              <div>{data.weather}</div>
             </Col>
           </Row>
         </Col>
