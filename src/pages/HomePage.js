@@ -3,26 +3,10 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import { useWeather } from "../context/contex";
 
 const HomePage = () => {
-  const data = {
-    city: "Ankara",
-    heat: 40,
-    precipitation: 0,
-    moisture: 20,
-    wind: 15,
-    day: "Çarşamba",
-    weather: "Güneşli",
-    weekdays: [
-      "Çarşamba",
-      "Perşembe",
-      "Cuma",
-      "Cumartesi",
-      "Pazar",
-      "Pazartesi",
-      "Salı",
-    ],
-  };
+  const data = useWeather();
   return (
     <div className="App d-flex align-items-center">
       <Container className="homepage">
