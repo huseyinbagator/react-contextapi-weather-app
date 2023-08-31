@@ -1,12 +1,8 @@
-import React, { createContext, useContext } from "react";
+import React, { createContext, useState } from "react";
 
-const WeatherContext = createContext();
+export const Context = createContext();
 
-export const useWeather = () => {
-  return useContext(WeatherContext);
-};
-
-export const WeatherProvider = ({ children }) => {
+export const ContextProvider = ({ children }) => {
   const data = {
     city: "Ankara",
     heat: 40,
@@ -25,8 +21,14 @@ export const WeatherProvider = ({ children }) => {
       "Salı",
     ],
   };
+  const [weather, setWeather] = useState(data);
 
   return (
-    <WeatherContext.Provider value={data}>{children}</WeatherContext.Provider>
+    <Context.Provider value={{
+      weather,
+      setWeather
+    }}>
+      {children}
+    </Context.Provider>
   );
 };
