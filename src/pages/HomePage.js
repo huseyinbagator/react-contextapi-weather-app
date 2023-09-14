@@ -9,8 +9,14 @@ const HomePage = () => {
   const { weather, setWeather } = useContext(Context);
 
   useEffect(() => {
-    getCityWeather(setWeather);
-  }, []);
+    const fetchWeather = async () => {
+      const city = "London";
+      const cityWeather = await getCityWeather(city);
+      setWeather(cityWeather);
+    };
+
+    fetchWeather();
+  }, [setWeather]);
 
   return (
     <div className="App d-flex align-items-center">
