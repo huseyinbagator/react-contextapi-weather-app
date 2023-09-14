@@ -13,8 +13,9 @@ const HomePage = () => {
       const city = "London";
       const cityWeather = await getCityWeather(city);
       setWeather(cityWeather);
+      console.log(cityWeather); 
     };
-
+    
     fetchWeather();
   }, [setWeather]);
 
