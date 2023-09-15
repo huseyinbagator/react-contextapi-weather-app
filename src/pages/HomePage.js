@@ -10,15 +10,23 @@ const HomePage = () => {
   const { weather, setWeather } = useContext(Context);
 
   useEffect(() => {
+
+    const city = "London";
+
     const fetchWeather = async () => {
-      const city = "London";
-      const cityWeather = await getCityWeather(city);
-      setWeather(cityWeather);
-      console.log(weather);
+      try {
+        const cityWeather = await getCityWeather(city);
+        setWeather(cityWeather);
+        console.log(cityWeather);
+        return cityWeather
+      } catch (error) {
+        console.error("Error fetching weather:", error);
+      }
     };
 
     fetchWeather();
   }, [setWeather]);
+  
   return (
     <div className="App d-flex align-items-center">
       <Container className="homepage">
