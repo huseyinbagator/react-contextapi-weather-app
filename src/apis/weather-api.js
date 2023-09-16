@@ -1,12 +1,9 @@
 import axios from "axios";
 
-import { Context } from "../contex.js";
-
-const KEY = "KEY";
+import { BASE_URL, KEY } from "../env-config";
 
 const instance = axios.create({
-
-  baseURL: "BASE_URL",
+  baseURL: BASE_URL,
   timeout: 2000,
 });
 

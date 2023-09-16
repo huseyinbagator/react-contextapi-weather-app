@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
@@ -8,25 +8,18 @@ import getCityWeather from "../apis/weather-api";
 
 const HomePage = () => {
   const { weather, setWeather } = useContext(Context);
+  const [city, setCity] = useState("London");
 
   useEffect(() => {
-
-    const city = "London";
-
     const fetchWeather = async () => {
-      try {
-        const cityWeather = await getCityWeather(city);
-        setWeather(cityWeather);
-        console.log(cityWeather);
-        return cityWeather
-      } catch (error) {
-        console.error("Error fetching weather:", error);
-      }
+      const cityWeather = await getCityWeather(city);
+      setWeather(cityWeather);
+      console.log(cityWeather);
     };
 
     fetchWeather();
-  }, [setWeather]);
-  
+  }, [city, setWeather]);
+
   return (
     <div className="App d-flex align-items-center">
       <Container className="homepage">
