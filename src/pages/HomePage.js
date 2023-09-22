@@ -9,17 +9,23 @@ import getCityWeather from "../apis/weather-api";
 
 const HomePage = () => {
   const { weather, setWeather } = useContext(Context);
-  const [city, setCity] = useState("London");
+  const [selectedCity, setSelectedCity] = useState("");
+
+  const cities = ["London", "İstanbul", "Ankara"];
 
   useEffect(() => {
     const fetchWeather = async () => {
-      const cityWeather = await getCityWeather(city);
+      const cityWeather = await getCityWeather(selectedCity);
       setWeather(cityWeather);
       console.log(cityWeather);
     };
 
     fetchWeather();
-  }, [city, setWeather]);
+  }, [selectedCity, setWeather]);
+
+  const handleCityChange = (event) => {
+    setSelectedCity(event.target.value);
+  };
 
   return (
     <div className="App d-flex align-items-center">
@@ -28,7 +34,19 @@ const HomePage = () => {
           <h1>{weather?.name || "Loading..."}</h1>
         </Col>
         <Col className="mx-3">
-          <select className="search-bar rounded-pill"></select>
+          <select
+            value={selectedCity}
+            onChange={handleCityChange}
+            className="search-bar rounded-pill"
+          >
+            <option value="">Selected City</option>
+            {cities.map((city, index) => (
+              <option key={index} value={city}>
+                {city}
+              </option>
+            ))}
+            ;
+          </select>
         </Col>
         <Col className="d-flex justify-content-center mt-3">
           <Row className="status-container bg-body d-flex justify-content-center align-items-center">
