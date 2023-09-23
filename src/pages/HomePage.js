@@ -13,16 +13,16 @@ const HomePage = () => {
 
   const cities = ["London", "İstanbul", "Ankara"];
 
-  const fetchWeather = async () => {
-    if (selectedCity) {
+  useEffect(() => {
+    const fetchWeather = async () => {
       const cityWeather = await getCityWeather(selectedCity);
       setWeather(cityWeather);
       console.log(cityWeather);
-    }
-  };
+    };
 
-  useEffect(() => {
-    fetchWeather();
+    if (selectedCity) {
+      fetchWeather();
+    }
   }, [selectedCity, setWeather]);
 
   const handleCityChange = (event) => {
