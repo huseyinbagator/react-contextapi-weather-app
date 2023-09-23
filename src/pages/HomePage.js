@@ -13,15 +13,15 @@ const HomePage = () => {
 
   const cities = ["London", "İstanbul", "Ankara"];
 
-  useEffect(() => {
-    const fetchWeather = async () => {
-      if (selectedCity) {
-        const cityWeather = await getCityWeather(selectedCity);
-        setWeather(cityWeather);
-        console.log(cityWeather);
-      }
-    };
+  const fetchWeather = async () => {
+    if (selectedCity) {
+      const cityWeather = await getCityWeather(selectedCity);
+      setWeather(cityWeather);
+      console.log(cityWeather);
+    }
+  };
 
+  useEffect(() => {
     fetchWeather();
   }, [selectedCity, setWeather]);
 
