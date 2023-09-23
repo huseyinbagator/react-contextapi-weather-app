@@ -15,9 +15,11 @@ const HomePage = () => {
 
   useEffect(() => {
     const fetchWeather = async () => {
-      const cityWeather = await getCityWeather(selectedCity);
-      setWeather(cityWeather);
-      console.log(cityWeather);
+      if (selectedCity) {
+        const cityWeather = await getCityWeather(selectedCity);
+        setWeather(cityWeather);
+        console.log(cityWeather);
+      }
     };
 
     fetchWeather();
