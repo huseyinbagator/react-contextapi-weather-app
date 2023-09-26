@@ -4,15 +4,15 @@ export const Context = createContext();
 
 export const ContextProvider = ({ children }) => {
   const [weather, setWeather] = useState({});
-  const [thema, setThema] = useState("light");
+  const [theme, setTheme] = useState("light");
 
   return (
     <Context.Provider
       value={{
         weather,
         setWeather,
-        thema,
-        setThema,
+        theme,
+        setTheme,
       }}
     >
       {children}
