@@ -34,7 +34,7 @@ const HomePage = () => {
     <div className="App d-flex align-items-center">
       <Container className="homepage">
         <Col>
-          <Button>Mod Change</Button>
+          <Button>Change Theme</Button>
         </Col>
         <Col className="text-center mt-4">
           <h1>{weather?.name || "Loading..."}</h1>
