@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 
+import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -33,7 +34,7 @@ const HomePage = () => {
     <div className="App d-flex align-items-center">
       <Container className="homepage">
         <Col>
-          <button>Mod Change</button>
+          <Button>Mod Change</Button>
         </Col>
         <Col className="text-center mt-4">
           <h1>{weather?.name || "Loading..."}</h1>
