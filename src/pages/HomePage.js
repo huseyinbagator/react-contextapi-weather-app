@@ -9,7 +9,7 @@ import { Context } from "../contex";
 import getCityWeather from "../apis/weather-api";
 
 const HomePage = () => {
-  const { weather, setWeather } = useContext(Context);
+  const { weather, setWeather, theme, setTheme } = useContext(Context);
   const [selectedCity, setSelectedCity] = useState("");
 
   const cities = ["London", "İstanbul", "Ankara"];
@@ -29,12 +29,18 @@ const HomePage = () => {
   const handleCityChange = (event) => {
     setSelectedCity(event.target.value);
   };
-
+  const changeThemeBtn = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+    console.log(theme);
+  };
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
   return (
     <div className="App d-flex align-items-center">
       <Container className="homepage">
         <Col>
-          <Button>Change Theme</Button>
+          <Button onClick={changeThemeBtn}>Change Theme</Button>
         </Col>
         <Col className="text-center mt-4">
           <h1>{weather?.name || "Loading..."}</h1>
