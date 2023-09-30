@@ -29,18 +29,21 @@ const HomePage = () => {
   const handleCityChange = (event) => {
     setSelectedCity(event.target.value);
   };
-  const changeThemeBtn = () => {
-    setTheme(theme === "light" ? "dark" : "light");
-    console.log(theme);
+
+  const changeTheme = () => {
+    const themeMap = {light: "dark", dark: "light"};
+    setTheme(themeMap[theme]);
   };
+
   useEffect(() => {
     document.body.className = theme;
   }, [theme]);
+
   return (
     <div className="App d-flex align-items-center">
       <Container className="homepage">
         <Col>
-          <Button onClick={changeThemeBtn}>Change Theme</Button>
+          <Button onClick={changeTheme}>Change Theme</Button>
         </Col>
         <Col className="text-center mt-4">
           <h1>{weather?.name || "Loading..."}</h1>
