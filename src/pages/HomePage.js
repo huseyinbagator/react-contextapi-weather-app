@@ -7,6 +7,7 @@ import Row from "react-bootstrap/Row";
 
 import { Context } from "../contex";
 import getCityWeather from "../apis/weather-api";
+import "./themestyles.css";
 
 const HomePage = () => {
   const { weather, setWeather, theme, setTheme } = useContext(Context);
@@ -31,7 +32,7 @@ const HomePage = () => {
   };
 
   const changeTheme = () => {
-    const themeMap = {light: "dark", dark: "light"};
+    const themeMap = { light: "dark", dark: "light" };
     setTheme(themeMap[theme]);
   };
 
@@ -41,7 +42,7 @@ const HomePage = () => {
 
   return (
     <div className="App d-flex align-items-center">
-      <Container className="homepage">
+      <Container className={`homepage ${theme}`}>
         <Col>
           <Button onClick={changeTheme}>Change Theme</Button>
         </Col>

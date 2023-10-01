@@ -1,0 +1,16 @@
+:root {
+  --primary-background: #001f3f;
+  --primary-text: white;
+  --secondary-background: #37363d;
+  --secondary-text: black;
+}
+
+body.dark {
+  background-color: var(--primary-background);
+  color: var(--primary-text);
+}
+
+.homepage.dark {
+  background-color: var(--secondary-background);
+  color: var(--primary-text);
+}
