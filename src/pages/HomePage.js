@@ -7,7 +7,6 @@ import Row from "react-bootstrap/Row";
 
 import { Context } from "../contex";
 import getCityWeather from "../apis/weather-api";
-import "./themestyles.css";
 
 const HomePage = () => {
   const { weather, setWeather, theme, setTheme } = useContext(Context);

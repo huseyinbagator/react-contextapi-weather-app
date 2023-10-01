@@ -1,3 +1,10 @@
+:root {
+  --primary-background-dark: #001f3f;
+  --primary-text-light: white;
+  --secondary-background-dark: #37363d;
+  --secondary-text-dark: black;
+}
+
 .App {
   height: 100vh;
 }
@@ -33,4 +40,16 @@
 .days {
   width: 95%;
   height: 150px;
+}
+
+/* Themes Styless  */
+
+body.dark {
+  background-color: var(--primary-background-dark);
+  color: var(--primary-text-light);
+}
+
+.homepage.dark {
+  background-color: var(--secondary-background-dark);
+  color: var(--primary-text-light);
 }
