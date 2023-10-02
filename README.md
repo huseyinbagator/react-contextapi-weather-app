@@ -1,7 +1,5 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Available Scripts
 
 In the project directory, you can run:
@@ -14,11 +12,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
@@ -29,42 +22,30 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Project Description
+1. `getCityWeather.js`:
+   - This module uses the Axios library to make an API request.
+   - It receives environmental variables such as `BASE_URL` and `KEY`.
+   - It contains an asynchronous function called `getCityWeather`. This function calls an external API to retrieve weather information for a specific city.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. `HomePage.js`:
+   - This module includes a React component named `HomePage`.
+   - This component provides a user interface where users can make selections from a list of cities and also displays weather information.
+   - It utilizes `useContext` to enable data management. It creates a `Context` that shares weather information and theme mode.
+   - It uses an asynchronous function called `fetchWeather` to fetch weather information for the selected city and updates this data in the component's state.
+   - Users can change the theme by activating a button that allows theme switching.
+   - It uses `useEffect` to apply theme changes and update the page's background color based on the selected theme.
+   - It uses a dropdown list to allow users to change the selected city, which is used for fetching weather information.
+   - Weather information is displayed on the page.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. `Context.js`:
+   - This module contains a React context and a provider function to facilitate context sharing.
+   - It creates a context named `Context` and includes functions that provide access to two state variables: `weather` and `theme`.
+   - The `ContextProvider` function is used to share this context among components.
+## App Screenshots
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Light Theme 
+![Light](./readme-images/lightmode.png)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Dark Theme
+![Dark](./readme-images/darkmode.png)
